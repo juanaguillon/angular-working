@@ -2,3 +2,10 @@
 <input type="text" [(ngModel)]="nombre" value="Click Me!">
 <span>{{nombre}}</span>
 <router-outlet></router-outlet>
+
+<h1>Listas NgFor</h1>
+<ul>
+  <ng-container *ngFor="let empresa of lugares">
+    <li *ngIf="empresa.show" >{{empresa.nombre}}</li>
+  </ng-container>
+</ul>

@@ -7,16 +7,21 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular Working';
-  listo = true;
   nombre = "";
 
-  constructor( ){
-    setTimeout(() => {
-      this.listo = false;
-    }, 2000);
-  }
-
-  makeSomething( ){
-    alert('Hello');
-  }
+  lugares = [
+    {
+      "nombre":"Gary",
+      "show": true
+    },
+    {
+      "nombre":"Mart",
+      "show": false
+    },
+    {
+      "nombre":"Trusta",
+      "show": true
+    }
+  ]
+  
 }
