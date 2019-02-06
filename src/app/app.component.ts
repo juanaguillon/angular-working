@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-platzi';
+  title = 'Angular Working';
+  listo = true;
+
+  constructor( ){
+    setTimeout(() => {
+      this.listo = false;
+    }, 2000);
+  }
+
+  makeSomething( ){
+    alert('Hello');
+  }
 }
