@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular Working';
   listo = true;
+  nombre = "";
 
   constructor( ){
     setTimeout(() => {
