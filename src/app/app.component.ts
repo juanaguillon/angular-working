@@ -12,15 +12,18 @@ export class AppComponent {
   lugares = [
     {
       "nombre":"Gary",
-      "show": true
+      "show": true,
+      "plan": 'pagado'
     },
     {
       "nombre":"Mart",
-      "show": false
+      "show": false,
+      "plan": 'gratis'
     },
     {
       "nombre":"Trusta",
-      "show": true
+      "show": true,
+      "plan": "pagado"
     }
   ]
   

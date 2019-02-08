@@ -6,6 +6,6 @@
 <h1>Listas NgFor</h1>
 <ul>
   <ng-container *ngFor="let empresa of lugares">
-    <li *ngIf="empresa.show" >{{empresa.nombre}}</li>
+    <li [resaltar]="empresa.plan" >{{empresa.nombre}}</li>
   </ng-container>
 </ul>
