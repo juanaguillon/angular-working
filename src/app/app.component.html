@@ -1,11 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<input type="text" [(ngModel)]="nombre" value="Click Me!">
-<span>{{nombre}}</span>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">AngularWorking</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a routerLink="/lugares" class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#" >Registro</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
 
-<h1>Listas NgFor</h1>
-<ul>
-  <ng-container *ngFor="let empresa of lugares">
-    <a ><li  ContarClicks named="ff" [resaltar]="empresa.plan" >{{empresa.nombre}}</li></a>
-  </ng-container>
-</ul>
+<router-outlet></router-outlet>
