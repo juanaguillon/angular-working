@@ -7,24 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular Working';
-  nombre = "";
-
-  lugares = [
-    {
-      "nombre":"Gary",
-      "show": true,
-      "plan": 'pagado'
-    },
-    {
-      "nombre":"Mart",
-      "show": false,
-      "plan": 'gratis'
-    },
-    {
-      "nombre":"Trusta",
-      "show": true,
-      "plan": "pagado"
-    }
-  ]
+  nombre = ""; 
   
 }

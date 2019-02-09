@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { DetallesComponent } from './detalles/detalles.component';
+import { LugaresComponent } from './lugares/lugares.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResaltarDirective,
     ContarClicksDirective,
-    DetallesComponent
+    DetallesComponent,
+    LugaresComponent
   ],
   imports: [
     BrowserModule,
