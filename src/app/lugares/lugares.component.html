@@ -1,3 +1,5 @@
+
 <ul class="list-group" >
-	<li *ngFor="let lugar of lugares" class="list-group-item">{{lugar.nombre}}</li>
+	<a *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" ><li class="list-group-item">{{lugar.nombre}}</li></a>
+	
 </ul>

@@ -8,6 +8,7 @@ import { ResaltarDirective } from './directives/resaltar.directive';
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { DetallesComponent } from './detalles/detalles.component';
 import { LugaresComponent } from './lugares/lugares.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LugaresComponent } from './lugares/lugares.component';
     ResaltarDirective,
     ContarClicksDirective,
     DetallesComponent,
-    LugaresComponent
+    LugaresComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

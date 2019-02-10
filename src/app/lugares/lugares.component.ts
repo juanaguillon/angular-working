@@ -7,21 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LugaresComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { 
+    
+  }
 
 
   lugares = [
     {
+      "id" : 1,
       "nombre":"Gary",
       "show": true,
       "plan": 'pagado'
     },
     {
+      "id" : 2,
       "nombre":"Mart",
       "show": false,
       "plan": 'gratis'
     },
     {
+      "id" : 3,
       "nombre":"Trusta",
       "show": true,
       "plan": "pagado"
