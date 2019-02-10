@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { LugaresService } from '../shared/services/lugares.service';
+
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
@@ -11,38 +13,22 @@ import { ActivatedRoute } from '@angular/router';
 export class DetallesComponent implements OnInit {
 
 
-  lugares = [
-    {
-      "id" : 1,
-      "nombre":"Gary",
-      "show": true,
-      "plan": 'pagado'
-    },
-    {
-      "id" : 2,
-      "nombre":"Mart",
-      "show": false,
-      "plan": 'gratis'
-    },
-    {
-      "id" : 3,
-      "nombre":"Trusta",
-      "show": true,
-      "plan": "pagado"
-    }
-  ];
-
+ 
   id = null;
+  lugar = null;
 
-  constructor( private activeRoute: ActivatedRoute ) {
-  	this.id = this.activeRoute.snapshot.params['id'];
-    console.log( this.buscarId () );
-  }
+  constructor( 
+    private activeRoute: ActivatedRoute,
+    private lugares: LugaresService
+   ) {
+
+  	
+    this.lugar = this.lugares.buscarId( this.activeRoute.snapshot.params['id'] );
+    
+  }  
 
   ngOnInit() { }
 
-  buscarId( ){
-  	return this.lugares.find(({ id }) => id == this.id || false );
-  }
+  
 
 }

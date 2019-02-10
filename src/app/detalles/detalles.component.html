@@ -1,10 +1,10 @@
 <div class="container">
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
-	    <li class="breadcrumb-item" aria-current="page"><a routerLink="lugares">Lugares</a></li>
-	    <li class="breadcrumb-item" aria-current="page">{{buscarId().nombre}}</li>
+	    <li class="breadcrumb-item" aria-current="page"><a routerLink="/lugares">Lugares</a></li>
+	    <li class="breadcrumb-item" aria-current="page">{{lugar.nombre}}</li>
 	  </ol>
 	</nav>
-	<h1>Hola {{buscarId().nombre}}</h1>
-	<span>Tienes tu plan: {{buscarId().plan}}</span>
+	<h1>Hola {{lugar.nombre}}</h1>
+	<span>Tienes tu plan: {{lugar.plan}}</span>
 </div>

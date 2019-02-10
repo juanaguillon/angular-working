@@ -1,20 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ResaltarDirective } from './directives/resaltar.directive';
-import { ContarClicksDirective } from './directives/contar-clicks.directive';
 import { DetallesComponent } from './detalles/detalles.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 
+import { environment } from '../environments/environment';
+
+import { LugaresService } from './shared/services/lugares.service';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ResaltarDirective,
-    ContarClicksDirective,
     DetallesComponent,
     LugaresComponent,
     ContactoComponent
@@ -23,7 +27,10 @@ import { ContactoComponent } from './contacto/contacto.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
+    AngularFireModule.initializeApp( environment.firebase, 'angular-working' ),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LugaresService } from '../shared/services/lugares.service';
 
 @Component({
   selector: 'app-lugares',
@@ -7,31 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LugaresComponent implements OnInit {
 
-  constructor( ) { 
-    
+  lugares = null;
+  constructor( private lugaresService:LugaresService ) { 
+     this.lugares = lugaresService.getLugares( );
   }
-
-
-  lugares = [
-    {
-      "id" : 1,
-      "nombre":"Gary",
-      "show": true,
-      "plan": 'pagado'
-    },
-    {
-      "id" : 2,
-      "nombre":"Mart",
-      "show": false,
-      "plan": 'gratis'
-    },
-    {
-      "id" : 3,
-      "nombre":"Trusta",
-      "show": true,
-      "plan": "pagado"
-    }
-  ]
   
   ngOnInit() {
   }
