@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DetallesComponent } from './detalles/detalles.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { CrearComponent } from './crear/crear.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,12 @@ const routes: Routes = [
   {
     path: "contacto",
     component: ContactoComponent
+  },
+  {
+    path:'crear',
+    component: CrearComponent
   }
+
 ];
 
 @NgModule({

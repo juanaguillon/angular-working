@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class LugaresService {
     }
   ];
 
-  constructor() { }
+  constructor( private db:AngularFirestore ) { }
 
   public getLugares( ){
   	return this.lugares;
@@ -40,5 +41,10 @@ export class LugaresService {
 
   public buscarId( idSearch ){
   	return this.lugares.find(({ id }) => id == idSearch || null );
+  }
+
+  public guardarLugar( lugar ){
+    console.log( lugar );
+    this.db.collection('working').add( lugar );
   }
 }

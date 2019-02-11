@@ -1,0 +1,21 @@
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a routerLink="/lugares">Lugares</a></li>
+		<li class="breadcrumb-item">Crear</li>
+	</ol>
+</nav>
+
+<div class="container">
+	<form>
+		<label>Nombre Proyecto</label>
+		<input type="text" name="name" class="form-control" [(ngModel)]="lugar.name">
+		<label>Descripción</label>
+		<textarea name="desc" class="form-control" [(ngModel)]="lugar.desc"></textarea>
+		<label>¿Incluir Plan?</label>
+		<input type="checkbox" name="plan" [(ngModel)]="lugar.plan">
+		<label >¿Mostrar?</label>
+		<input type="checkbox" name="show"  [(ngModel)]="lugar.show">
+		<hr> 
+		<input type="submit" value="Crear" class="btn btn-primary" (click)="guardarLugar()" >
+	</form>
+</div>

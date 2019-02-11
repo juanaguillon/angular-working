@@ -1,5 +1,8 @@
 
-<ul class="list-group" >
-	<a *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" ><li class="list-group-item">{{lugar.nombre}}</li></a>
-	
-</ul>
+<div class="container">
+	<a routerLink="/crear" class="btn btn-primary">Crear Proyecto</a>
+	<ul class="list-group" >
+		<a *ngFor="let lugar of lugares" routerLink="/detalle/{{lugar.id}}" ><li class="list-group-item">{{lugar.nombre}}</li></a>
+		
+	</ul>
+</div>
