@@ -24,7 +24,7 @@ const routes: Routes = [
     component: ContactoComponent
   },
   {
-    path:'crear',
+    path:'crear/:id',
     component: CrearComponent
   }
 

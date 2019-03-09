@@ -5,38 +5,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class LugaresService {
-
-	lugares = [
-    {
-      "id" : 1,
-      "nombre":"Gary",
-      "show": true,
-      "plan": 'pagado'
-    },
-    {
-      "id" : 2,
-      "nombre":"Mart",
-      "show": false,
-      "plan": 'gratis'
-    },
-    {
-      "id" : 3,
-      "nombre":"Trusta",
-      "show": true,
-      "plan": "pagado"
-    },
-    {
-      "id" : 4,
-      "nombre":"Alejo",
-      "show": false,
-      "plan": "En venta"
-    }
-  ];
+  lugares = null;
 
   constructor( private db:AngularFirestore ) { }
 
   public getLugares( ){
-  	return this.lugares;
+  	return this.db.collection("working").valueChanges();
   }
 
   public buscarId( idSearch ){
@@ -44,7 +18,15 @@ export class LugaresService {
   }
 
   public guardarLugar( lugar ){
-    console.log( lugar );
-    this.db.collection('working').add( lugar );
+    lugar.id = Date.now();
+    this.db.collection('working').snapshotChanges()
   }
+
+  public getLugar( id ){
+    
+    return this.db.collection("working").ref
+  }
+
+  
+
 }

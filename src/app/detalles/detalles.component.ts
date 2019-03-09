@@ -11,9 +11,7 @@ import { LugaresService } from '../shared/services/lugares.service';
 
 
 export class DetallesComponent implements OnInit {
-
-
- 
+   
   id = null;
   lugar = null;
 

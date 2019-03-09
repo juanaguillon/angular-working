@@ -10,7 +10,11 @@ export class LugaresComponent implements OnInit {
 
   lugares = null;
   constructor( private lugaresService:LugaresService ) { 
-     this.lugares = lugaresService.getLugares( );
+    lugaresService.getLugares( )
+    	.subscribe( respond => {
+        this.lugares = respond;
+      })
+      
   }
   
   ngOnInit() {
