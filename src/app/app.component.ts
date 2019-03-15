@@ -28,5 +28,8 @@ export class AppComponent {
   animar(){
     this.state = ( this.state === "final") ? "inicial" : "final";
   }
+
+  animationStart( e ){
+  }
   
 }

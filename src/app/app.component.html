@@ -18,7 +18,7 @@
   </div>
 </nav>
 
-<div class="cuadrado" [@contenedor]="state"></div>
+<div class="cuadrado" [@contenedor]="state" (@contenedor.start)="animationStart($event)"></div>
 <button class="btn btn-secondary" (click)="animar()" >Animar</button>
 
 <router-outlet></router-outlet>
