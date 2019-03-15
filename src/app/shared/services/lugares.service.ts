@@ -22,11 +22,11 @@ export class LugaresService {
 
   public guardarLugar( lugar ){
     lugar.id = Date.now();
-    this.http.post( "http://localhost:8080/prueba-php/index1.php" , lugar, {
-      "headers": { "Content-Type": "application/json" }
-    } ).subscribe( refs => console.log( refs ));
+    // this.http.post( "http://localhost:8080/prueba-php/index1.php" , lugar, {
+    //   "headers": { "Content-Type": "application/json" }
+    // } ).subscribe( refs => console.log( refs ));
 
-    // this.db.collection('working').doc( lugar.id.toString() ).set(lugar)
+    this.db.collection('working').doc( lugar.id.toString() ).set(lugar)
   }
 
   public editarLugar( lugarId ){

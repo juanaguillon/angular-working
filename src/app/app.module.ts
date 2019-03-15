@@ -18,6 +18,7 @@ import { CrearComponent } from './crear/crear.component';
 import { environment } from '../environments/environment';
 
 import { LugaresService } from './shared/services/lugares.service';
+import { LinkifyPipe } from './shared/pipes/linkify.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LugaresService } from './shared/services/lugares.service';
     DetallesComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+    LinkifyPipe
   ],
   imports: [
     BrowserModule,
