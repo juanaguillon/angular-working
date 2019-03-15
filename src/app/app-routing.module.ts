@@ -4,6 +4,8 @@ import { DetallesComponent } from './detalles/detalles.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CrearComponent } from './crear/crear.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   {
@@ -24,8 +26,16 @@ const routes: Routes = [
     component: ContactoComponent
   },
   {
+    path:'ingresar',
+    component: LoginComponent
+  },
+  {
     path:'crear/:id',
     component: CrearComponent
+  },
+  {
+    path:'registrar',
+    component: RegistroComponent
   }
 
 ];

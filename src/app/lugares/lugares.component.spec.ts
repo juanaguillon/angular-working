@@ -3,23 +3,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LugaresComponent } from './lugares.component';
 
 describe('LugaresComponent', () => {
-  let component: LugaresComponent;
-  let fixture: ComponentFixture<LugaresComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LugaresComponent ]
-    })
-    .compileComponents();
-  }));
-
   beforeEach(() => {
-    fixture = TestBed.createComponent(LugaresComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    TestBed.configureTestingModule({
+      declarations:[LugaresComponent]
+    });
+  })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('Should create the App', ()=>{
+    let fixture = TestBed.createComponent(LugaresComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
+  })
 });

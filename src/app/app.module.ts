@@ -20,6 +20,8 @@ import { environment } from '../environments/environment';
 
 import { LugaresService } from './shared/services/lugares.service';
 import { LinkifyPipe } from './shared/pipes/linkify.pipe';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LinkifyPipe } from './shared/pipes/linkify.pipe';
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
-    LinkifyPipe
+    LinkifyPipe,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
