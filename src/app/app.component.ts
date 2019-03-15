@@ -41,14 +41,9 @@ export class AppComponent {
 
   }
 
-
-  animar(){
-    this.state = ( this.state === "final") ? "inicial" : "final";
+  logoutUser( ){
+    this.AuthService.logoutUser();
   }
-
-  animationStart( e ){
-  }
-
 
 
   

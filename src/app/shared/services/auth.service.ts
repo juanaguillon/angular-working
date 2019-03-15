@@ -38,10 +38,15 @@ export class AuthService {
     
   }
 
+  logoutUser ( ){
+    this.auth.auth.signOut();
+  }
+
 
   public isLogged( ){
     return this.auth.authState;
   }
+
 
   
 }
