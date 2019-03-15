@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { AuthService } from './shared/services/auth.service';
+import { Router } from '@angular/router'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,7 +27,7 @@ export class AppComponent {
   state =  "final" 
   authLogged:boolean = false;
 
-  constructor( private AuthService:AuthService ){
+  constructor( private AuthService:AuthService, private router:Router ){
 
     // this.authLogged = AuthService.isLoggin( );
     // console.log( this.AuthService.isLogged() );
@@ -43,7 +45,10 @@ export class AppComponent {
 
   logoutUser( ){
     this.AuthService.logoutUser();
+    this.router.navigate(["/ingresar"]);
   }
+
+
 
 
   
