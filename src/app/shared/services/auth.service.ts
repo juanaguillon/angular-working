@@ -38,6 +38,11 @@ export class AuthService {
     
   }
 
+
+  public isLogged( ){
+    return this.auth.authState;
+  }
+
   
 }
 

@@ -6,6 +6,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { CrearComponent } from './crear/crear.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { MyGuard } from './shared/services/my-guard.service';
 
 const routes: Routes = [
   {
@@ -31,7 +32,8 @@ const routes: Routes = [
   },
   {
     path:'crear/:id',
-    component: CrearComponent
+    component: CrearComponent,
+    canActivate: [MyGuard]
   },
   {
     path:'registrar',

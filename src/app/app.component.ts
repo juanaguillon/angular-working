@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-
+import { AuthService } from './shared/services/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,6 +23,23 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class AppComponent {
   title = 'Angular Working';
   state =  "final" 
+  authLogged:boolean = false;
+
+  constructor( private AuthService:AuthService ){
+
+    // this.authLogged = AuthService.isLoggin( );
+    // console.log( this.AuthService.isLogged() );
+    this.AuthService.isLogged().subscribe( r => {
+      if ( r && r.uid ){
+        this.authLogged = true;
+      }else{
+        this.authLogged = false;
+      }
+    }, error => {
+      this.authLogged = false
+    } )
+
+  }
 
 
   animar(){
@@ -31,5 +48,8 @@ export class AppComponent {
 
   animationStart( e ){
   }
+
+
+
   
 }

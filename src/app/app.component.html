@@ -12,10 +12,12 @@
       <li class="nav-item">
         <a routerLinkActive="active" routerLink="/contacto" class="nav-link">Contacto</a>
       </li>
-      <li class="nav-item">
+
+
+      <li class="nav-item" *ngIf="!authLogged">
         <a routerLinkActive="active" routerLink="/ingresar" class="nav-link">Login</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!authLogged">
         <a routerLinkActive="active" routerLink="/registrar" class="nav-link">Registrar</a>
       </li>
       
