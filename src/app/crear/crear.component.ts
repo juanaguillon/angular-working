@@ -15,12 +15,20 @@ export class CrearComponent{
 		this.id = this.route.snapshot.params["id"];
 		if ( this.id != "new" ){
 			let e = this.lugarService.getLugar( this.id );
-			e.where('id','==', this.id ).get().then( a => console.log( a))
+			e.subscribe( f => {
+				this.lugar = f;
+			});
 		}
 	}
 
 	guardarLugar( ){
-		this.lugarService.guardarLugar( this.lugar );
+		if (this.id != "new") {
+			this.lugar.id = this.id;
+			let e = this.lugarService.editarLugar(this.lugar);
+		}else{
+			let s = this.lugarService.guardarLugar( this.lugar );
+
+		}
 	}
 
 }
