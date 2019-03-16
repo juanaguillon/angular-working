@@ -6,6 +6,15 @@
 </nav>
 
 <div class="container">
+
+<div class="card">
+	<div class="card-body">
+		<form>
+			<label>Buscar dirección en Google Maps</label>
+			<input class="form-control" type="text" [formControl]="searchField">
+		</form>
+	</div>
+</div>
 	<form>
 		<label>Nombre Proyecto</label>
 		<input type="text" name="name" class="form-control" [(ngModel)]="lugar.name">

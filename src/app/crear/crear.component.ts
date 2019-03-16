@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { ActivatedRoute } from '@angular/router';
 import { LugaresService } from '../shared/services/lugares.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from "rxjs";
-import 'rxjs/Rx';
+import { switchMap, map} from 'rxjs/operators';
+
 
 @Component({
 	selector : "app-crear",
@@ -12,9 +15,17 @@ import 'rxjs/Rx';
 })
 
 export class CrearComponent{
+	geocodeURL = "https://jsonplaceholder.typicode.com/posts";
 	lugar:any = {}
 	id: any = null;
-	constructor( private lugarService:LugaresService, private route:ActivatedRoute ){
+	private searchField:FormControl;
+	results$:Observable<any>;
+
+	constructor( private lugarService:LugaresService, 
+		private route:ActivatedRoute,
+		private http:HttpClient	){
+
+
 		this.id = this.route.snapshot.params["id"];
 		if ( this.id != "new" ){
 			let e = this.lugarService.getLugar( this.id );
@@ -22,7 +33,27 @@ export class CrearComponent{
 				this.lugar = f;
 			});
 		}
+
+
+
+		this.searchField = new FormControl();
+		this.results$ =  this.searchField.valueChanges
+			.pipe( switchMap ( query => {
+				return this.http.get( this.geocodeURL );
+			}) );
+		// 	map( resp => resp )
+
+		// );
+
+		this.results$.subscribe( ref => {
+			console.log( ref );
+		} )
+
+
+		
 	}
+
+
 
 	guardarLugar( ){
 		if (this.id != "new") {

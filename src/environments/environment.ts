@@ -11,7 +11,8 @@ export const environment = {
     projectId: "angular-working-1549591892193",
     storageBucket: "angular-working-1549591892193.appspot.com",
     messagingSenderId: "502579529418"
-  }
+  },
+  geolocationAPIKey: 'AIzaSyD5R9vBGqYRyXBY1rDF9vVtCU7F7dDz8is'
 };
 
 /*
