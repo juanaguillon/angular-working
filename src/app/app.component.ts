@@ -26,6 +26,7 @@ export class AppComponent {
   title = 'Angular Working';
   state =  "final" 
   authLogged:boolean = false;
+  currentUser:any;
 
   constructor( private AuthService:AuthService, private router:Router ){
 
@@ -34,6 +35,8 @@ export class AppComponent {
     this.AuthService.isLogged().subscribe( r => {
       if ( r && r.uid ){
         this.authLogged = true;
+        this.currentUser = this.AuthService.getCurrentUser();
+        console.log( this.currentUser );
       }else{
         this.authLogged = false;
       }
@@ -41,15 +44,15 @@ export class AppComponent {
       this.authLogged = false
     } )
 
+
+
   }
 
   logoutUser( ){
     this.AuthService.logoutUser();
     this.router.navigate(["/ingresar"]);
   }
-
-
-
-
   
+
+
 }

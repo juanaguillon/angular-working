@@ -14,11 +14,9 @@ export class AuthService {
     this.auth.auth.createUserWithEmailAndPassword( email, password )
       .then( resp => {
         alert('Usuario registrado correctamente');
-        console.log( resp );
       })
       .catch( err => {
         alert('Error inesperado')
-        console.log( err );
       });
       
     
@@ -28,11 +26,9 @@ export class AuthService {
     this.auth.auth.signInWithEmailAndPassword( email, password )
       .then( resp => {
         alert('Usuario logeado correctamente');
-        console.log( resp );
       })
       .catch( err => {
         alert('Error inesperado')
-        console.log( err );
       });
       
     
@@ -45,6 +41,10 @@ export class AuthService {
 
   public isLogged( ){
     return this.auth.authState;
+  }
+
+  public getCurrentUser( ){
+    return this.auth.auth;
   }
 
 

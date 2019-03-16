@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LugaresService } from '../shared/services/lugares.service';
 
+import { Observable } from "rxjs";
+import 'rxjs/Rx';
+
 @Component({
 	selector : "app-crear",
 	templateUrl: 'crear.component.html'
